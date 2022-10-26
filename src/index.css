@@ -1,0 +1,17 @@
+@font-face {
+    font-family: "oriental";
+    src: url("./oriental.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: url("./background.webp") center;
+    background-size: cover;
+}
