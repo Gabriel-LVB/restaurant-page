@@ -1,4 +1,6 @@
 import "./menu.style.css";
+import elementCreator from "../../functions/elementCreator";
+import insertChilds from "../../functions/insertChilds";
 
 const menuList = [
     {
@@ -27,54 +29,40 @@ const menuList = [
     },
 ];
 
-function menuTitle() {
-    const menuTitle = document.createElement("h1");
-    menuTitle.className = "title";
-    menuTitle.textContent = "Our Menu";
-    return menuTitle;
-}
-
 function createItem(item) {
-    const newItem = document.createElement("div");
-    newItem.className = `menu-item ${item.name.toLowerCase()}`;
+    const newItem = elementCreator(
+        "div",
+        `menu-item ${item.name.toLowerCase()}`
+    );
 
-    const itemImage = new Image();
-    itemImage.className = "item-image";
-    itemImage.src = item.image;
+    const itemImage = elementCreator("img", "item-image", null, item.image);
 
-    const texts = document.createElement("div");
-    texts.className = "item-texts";
+    const texts = elementCreator("div", "item-texts");
 
-    const itemName = document.createElement("h3");
-    itemName.className = "item-name";
-    itemName.textContent = item.name;
+    const itemName = elementCreator("h3", "item-name", item.name);
 
-    const description = document.createElement("p");
-    description.className = "item-description";
-    description.textContent =
-        "Traditional Japanese food, known as washoku, is one of the most diverse and fascinating world cuisines.";
+    const description = elementCreator(
+        "p",
+        "item-description",
+        "Traditional Japanese food, known as washoku, is one of the most diverse and fascinating world cuisines."
+    );
 
-    texts.appendChild(itemName);
-    texts.appendChild(description);
-
-    newItem.appendChild(itemImage);
-    newItem.appendChild(texts);
+    insertChilds(texts, itemName, description);
+    insertChilds(newItem, itemImage, texts);
     return newItem;
 }
 
 function menuItems() {
-    const menuItems = document.createElement("div");
-    menuItems.className = "menu-items";
+    const menuItems = elementCreator("div", "menu-items");
     menuList.forEach((item) => {
-        menuItems.appendChild(createItem(item));
+        insertChilds(menuItems, createItem(item));
     });
     return menuItems;
 }
 
 export default function menu() {
-    const menu = document.createElement("div");
-    menu.className = "menu";
-    menu.appendChild(menuTitle());
-    menu.appendChild(menuItems());
+    const menu = elementCreator("div", "menu");
+    const menuTitle = elementCreator("h1", "title", "Our Menu");
+    insertChilds(menu, menuTitle, menuItems());
     return menu;
 }

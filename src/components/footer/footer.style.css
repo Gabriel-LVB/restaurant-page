@@ -1,0 +1,14 @@
+.footer {
+    background-color: rgba(0, 0, 0, 0.708);
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 1rem;
+    border-radius: 200px 200px 0 0;
+}
+
+.footer-link {
+    font-size: 1.2rem;
+}

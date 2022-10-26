@@ -21,4 +21,6 @@ iframe {
     margin-top: 2rem;
     border: none;
     border-radius: 20px;
+    width: 400px;
+    height: 300px;
 }

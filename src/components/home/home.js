@@ -1,36 +1,27 @@
 import "./home.style.css";
-import narutoImage from "./naruto-eating.png";
-
-function narutoEating() {
-    const narutoEating = new Image();
-    narutoEating.src = narutoImage;
-    narutoEating.className = "naruto-eating";
-    return narutoEating;
-}
-
-function bestRamenText() {
-    const bestRamenText = document.createElement("h1");
-    bestRamenText.className = "best-ramen-text";
-    bestRamenText.textContent = "Best Ramen \r\n";
-    bestRamenText.textContent += "in region";
-    return bestRamenText;
-}
-
-function foodQuote() {
-    const foodQuote = document.createElement("h3");
-    foodQuote.className = "food-quote";
-    foodQuote.textContent =
-        "“Food brings people together on many different levels. It’s nourishment of the soul and body; it’s truly love.” \r\n";
-    foodQuote.textContent += "-Chōji Akimichi ";
-    return foodQuote;
-}
+import narutoImageLink from "./naruto-eating.png";
+import elementCreator from "../../functions/elementCreator";
+import insertChilds from "../../functions/insertChilds";
 
 export default function home() {
-    const home = document.createElement("div");
-    home.className = "home";
-    home.appendChild(narutoEating());
-    home.appendChild(bestRamenText());
-    home.appendChild(foodQuote());
+    const home = elementCreator("div", "home");
+    const narutoImage = elementCreator(
+        "img",
+        "naruto-eating",
+        null,
+        narutoImageLink
+    );
+    const bestRamenText = elementCreator(
+        "h1",
+        "best-ramen-text",
+        "Best Ramen \r\nin region"
+    );
+    const foodQuote = elementCreator(
+        "h3",
+        "food-quote",
+        "“Food brings people together on many different levels. It’s nourishment of the soul and body; it’s truly love.” \r\n-Chōji Akimichi "
+    );
+    insertChilds(home, narutoImage, bestRamenText, foodQuote);
 
     return home;
 }
