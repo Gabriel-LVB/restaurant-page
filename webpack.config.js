@@ -7,7 +7,6 @@ module.exports = {
     output: {
         filename: "main.js",
         path: path.resolve(__dirname, "dist"),
-        clean: true,
     },
     module: {
         rules: [
@@ -16,7 +15,11 @@ module.exports = {
                 use: ["style-loader", "css-loader"],
             },
             {
-                test: /\.(webp|woff|svg)$/i,
+                test: /\.(webp|svg|png)$/i,
+                type: "asset/resource",
+            },
+            {
+                test: /\.(woff)$/i,
                 type: "asset/resource",
             },
         ],

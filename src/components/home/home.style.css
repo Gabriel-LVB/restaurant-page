@@ -1,0 +1,25 @@
+.home {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.naruto-eating {
+    object-fit: cover;
+    width: 350px;
+    margin-left: -5%;
+}
+
+.best-ramen-text {
+    font-family: "oriental";
+    font-size: 5rem;
+    white-space: pre;
+}
+
+.food-quote {
+    font-size: 2rem;
+    width: 80%;
+    margin-top: 1rem;
+    text-align: end;
+    white-space: pre-wrap;
+}

@@ -1,0 +1,24 @@
+.title.contact {
+    font-size: 2.8rem;
+    margin-bottom: 0.5rem;
+}
+
+.phone-number {
+    width: fit-content;
+    margin: auto;
+    font-size: 1.8rem;
+}
+
+.phone-number:last-child {
+    margin-bottom: 4rem;
+}
+
+.map {
+    text-align: center;
+}
+
+iframe {
+    margin-top: 2rem;
+    border: none;
+    border-radius: 20px;
+}

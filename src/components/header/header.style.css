@@ -1,0 +1,73 @@
+.header {
+    background-color: rgba(0, 0, 0, 0.708);
+    padding: 1rem 0;
+    margin: auto;
+    border-radius: 0 0 200px 200px;
+}
+
+.logo {
+    font-family: "oriental";
+    width: fit-content;
+    margin: auto;
+    margin-bottom: -2rem;
+    font-size: 5rem;
+    cursor: pointer;
+}
+
+.sub-logo {
+    width: fit-content;
+    margin: auto;
+    font-size: 2rem;
+    padding-left: 200px;
+    cursor: pointer;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 30vw;
+    gap: 50px;
+    margin: 50px auto 10px auto;
+}
+
+.nav-item {
+    list-style: none;
+    font-size: 2rem;
+    transition: all 0.5s ease-out;
+    position: relative;
+}
+
+.nav-item::before {
+    content: url("./nav-icon.svg");
+    position: absolute;
+    top: 10px;
+    left: -40px;
+    padding-right: 40px;
+}
+
+.nav-item::after {
+    content: "";
+    background-color: white;
+    position: absolute;
+    bottom: -5px;
+    left: -45px;
+    right: -5px;
+    height: 1.4px;
+    width: 0px;
+    margin: auto;
+    transition: all 0.4s ease-out;
+}
+
+.nav-item:hover {
+    cursor: pointer;
+}
+
+.nav-item:active {
+    cursor: default;
+}
+
+.nav-item:hover::after,
+.nav-item.active::after {
+    width: 152%;
+}
